@@ -1,6 +1,6 @@
 {
   "name": "are-we-there-yet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Keep track of the overall completion of many dispirate processes",
   "main": "index.js",
   "scripts": {

@@ -15,6 +15,7 @@ var TrackerGroup = exports.TrackerGroup = function (name) {
   this.trackGroup.forEach(function(unit) {
     unit.on("change", noteChange)
   })
+  EventEmitter.call(this)
 }
 util.inherits(TrackerGroup, EventEmitter)
 
@@ -79,6 +80,7 @@ var Tracker = exports.Tracker = function (name,todo) {
   this.name = name
   this.workDone =  0
   this.workTodo = todo || 0
+  EventEmitter.call(this)
 }
 util.inherits(Tracker, EventEmitter)
 

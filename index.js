@@ -5,6 +5,7 @@ var util = require("util")
 var delegate = require("delegates")
 
 var TrackerGroup = exports.TrackerGroup = function (name) {
+  EventEmitter.call(this)
   this.name = name
   this.trackGroup = []
   var self = this
@@ -15,7 +16,6 @@ var TrackerGroup = exports.TrackerGroup = function (name) {
   this.trackGroup.forEach(function(unit) {
     unit.on("change", noteChange)
   })
-  EventEmitter.call(this)
 }
 util.inherits(TrackerGroup, EventEmitter)
 
@@ -77,10 +77,10 @@ TrackerGroup.prototype.debug = function (depth) {
 }
 
 var Tracker = exports.Tracker = function (name,todo) {
+  EventEmitter.call(this)
   this.name = name
   this.workDone =  0
   this.workTodo = todo || 0
-  EventEmitter.call(this)
 }
 util.inherits(Tracker, EventEmitter)
 
@@ -106,10 +106,10 @@ Tracker.prototype.finish = function () {
 
 
 var TrackerStream = exports.TrackerStream = function (name, size, options) {
+  stream.Transform.call(this, options)
   this.tracker = new Tracker(name, size)
   var self = this
   this.tracker.on("change", function (name) { self.emit("change", name) })
-  stream.Transform.call(this, options)
 }
 util.inherits(TrackerStream, stream.Transform)
 

@@ -108,6 +108,7 @@ Tracker.prototype.finish = function () {
 var TrackerStream = exports.TrackerStream = function (name, size, options) {
   stream.Transform.call(this, options)
   this.tracker = new Tracker(name, size)
+  this.name = name
   var self = this
   this.tracker.on("change", function (name) { self.emit("change", name) })
 }

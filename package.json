@@ -20,6 +20,7 @@
     "tap": "^0.4.13"
   },
   "dependencies": {
-    "delegates": "^0.1.0"
+    "delegates": "^0.1.0",
+    "readable-stream": "^1.0.33"
   }
 }

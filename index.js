@@ -4,18 +4,18 @@ var EventEmitter = require("events").EventEmitter
 var util = require("util")
 var delegate = require("delegates")
 
+function noteChange (trackerGroup) {
+  return function (name) {
+    trackerGroup.emit('change', name || trackerGroup.name);
+  }
+}
+
 var TrackerGroup = exports.TrackerGroup = function (name) {
   EventEmitter.call(this)
   this.name = name
   this.trackGroup = []
-  var self = this
   this.totalWeight = 0
-  var noteChange = this.noteChange = function (name) {
-    self.emit("change", name || this.name)
-  }.bind(this)
-  this.trackGroup.forEach(function(unit) {
-    unit.on("change", noteChange)
-  })
+  this.noteChange = noteChange(this)
 }
 util.inherits(TrackerGroup, EventEmitter)
 

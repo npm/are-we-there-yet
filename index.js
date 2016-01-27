@@ -23,9 +23,10 @@ TrackerGroup.prototype.completed = function () {
   if (this.trackGroup.length==0) return 0
   var valPerWeight = 1 / this.totalWeight
   var completed = 0
-  this.trackGroup.forEach(function(T) {
-    completed += valPerWeight * T.weight *  T.completed()
-  })
+  for (var i = 0, len = this.trackGroup.length; i < len; i++){
+    var group = this.trackGroup[i];
+    completed += valPerWeight * group.weight *  group.completed()
+  }
   return completed
 }
 
@@ -52,12 +53,12 @@ TrackerGroup.prototype.newStream = function (name, todo, weight) {
 }
 
 TrackerGroup.prototype.finish = function () {
-  if (! this.trackGroup.length) { this.addUnit(new Tracker(), 1, true) }
-  var self = this
-  this.trackGroup.forEach(function(T) {
-    T.removeListener("change", self.noteChange)
-    T.finish()
-  })
+  if (! this.trackGroup.length) this.addUnit(new Tracker(), 1, true)
+  for (var i = 0, len = this.trackGroup.length; i < len; i++) {
+    var group = this.trackGroup[i]
+    group.removeListener("change", this.noteChange)
+    group.finish()
+  }
   this.emit("change", this.name)
 }
 

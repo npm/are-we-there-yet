@@ -1,5 +1,5 @@
 "use strict"
-var stream = require("readable-stream");
+var stream = require("readable-stream")
 var EventEmitter = require("events").EventEmitter
 var util = require("util")
 var delegate = require("delegates")
@@ -33,6 +33,7 @@ TrackerGroup.prototype.addUnit = function (unit, weight, noChange) {
   unit.weight = weight || 1
   this.totalWeight += unit.weight
   this.trackGroup.push(unit)
+  // Bubble events back up
   unit.on("change", this.noteChange)
   if (! noChange) this.emit("change", this.name)
   return unit
@@ -85,7 +86,7 @@ var Tracker = exports.Tracker = function (name,todo) {
 util.inherits(Tracker, EventEmitter)
 
 Tracker.prototype.completed = function () {
-  return this.workTodo==0 ? 0 : this.workDone / this.workTodo
+  return this.workTodo === 0 ? 0 : this.workDone / this.workTodo
 }
 
 Tracker.prototype.addWork = function (work) {

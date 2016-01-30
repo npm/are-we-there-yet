@@ -4,7 +4,7 @@
   "description": "Keep track of the overall completion of many dispirate processes",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "standard && tap test/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/iarna/are-we-there-yet",
   "devDependencies": {
+    "standard": "^5.4.1",
     "tap": "^5.2.0"
   },
   "dependencies": {

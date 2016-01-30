@@ -1,5 +1,9 @@
 Hi, figured we could actually use a changelog now:
 
+## 1.1.1 2016-01-29
+
+* Fix a typo in stream completion tracker
+
 ## 1.1.0 2016-01-29
 
 * Rewrote completion percent computation to be low impact– no more walking a

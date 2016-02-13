@@ -18,7 +18,7 @@
   "homepage": "https://github.com/iarna/are-we-there-yet",
   "devDependencies": {
     "standard": "^5.4.1",
-    "tap": "^5.2.0"
+    "tap": "^5.4.4"
   },
   "dependencies": {
     "delegates": "^1.0.0",

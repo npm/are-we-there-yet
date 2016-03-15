@@ -76,3 +76,21 @@ test('TrackerGroup', function (t) {
     t.end()
   }
 })
+
+test('cycles', function (t) {
+  var track = new TrackerGroup('top')
+  testCycle(track, track)
+  var layer1 = track.newGroup('layer1')
+  testCycle(layer1, track)
+  t.end()
+
+  function testCycle (addTo, toAdd) {
+    try {
+      addTo.addUnit(toAdd)
+      t.fail(toAdd.name)
+    } catch (ex) {
+      console.log(ex)
+      t.pass(toAdd.name)
+    }
+  }
+})

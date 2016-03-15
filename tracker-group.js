@@ -6,6 +6,7 @@ var TrackerStream = require('./tracker-stream.js')
 
 var TrackerGroup = module.exports = function (name) {
   TrackerBase.call(this, name)
+  this.parentGroup = null
   this.trackers = []
   this.completion = {}
   this.weight = {}
@@ -23,7 +24,30 @@ function bubbleChange (trackerGroup) {
   }
 }
 
+TrackerGroup.prototype.nameInTree = function () {
+  var names = []
+  var from = this
+  while (from) {
+    names.unshift(from.name)
+    from = from.parentGroup
+  }
+  return names.join('/')
+}
+
 TrackerGroup.prototype.addUnit = function (unit, weight) {
+  if (unit.addUnit) {
+    var toTest = this
+    while (toTest) {
+      if (unit === toTest) {
+        throw new Error(
+          'Attempted to add tracker group ' +
+          unit.name + ' to tree that already includes it ' +
+          this.nameInTree(this))
+      }
+      toTest = toTest.parentGroup
+    }
+    unit.parentGroup = this
+  }
   this.weight[unit.id] = weight || 1
   this.totalWeight += this.weight[unit.id]
   this.trackers.push(unit)

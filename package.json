@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "delegates": "^1.0.0",
-    "readable-stream": "^2.0.0 || ^1.1.13"
+    "readable-stream": "^2.0.6"
   }
 }

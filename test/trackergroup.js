@@ -94,3 +94,15 @@ test('cycles', function (t) {
     }
   }
 })
+
+test('should properly handle finish calls when the group contains a stream', function (t) {
+  var track = new TrackerGroup('test')
+  track.newStream('test-stream', 100)
+  try {
+    track.finish()
+    t.pass('did not error on `finish()` call')
+  } catch (e) {
+    t.fail('threw error on `finish()` call')
+  }
+  t.end()
+})

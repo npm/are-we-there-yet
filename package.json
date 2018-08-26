@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "delegates": "^1.0.0",
-    "readable-stream": "^2.0.6"
+    "readable-stream": "^3.0.2"
   },
   "files": [
     "index.js",

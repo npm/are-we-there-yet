@@ -85,7 +85,20 @@ TrackerGroup
     notifications if the component updating didn't have a name. Defaults to undefined.
 
 Creates a new empty tracker aggregation group. These are trackers whose
-completion status is determined by the completion status of other trackers.
+completion status is determined by the completion status of other trackers added to this aggregation group.
+
+Ex.
+
+```javascript
+var tracker = new TrackerGroup("parent")
+var foo = tracker.newItem("firstChild", 100)
+var bar = tracker.newItem("secondChild", 100)
+
+foo.finish()
+console.log(tracker.completed()) // 0.5
+bar.finish()
+console.log(tracker.completed()) // 1
+```
 
 * tracker.addUnit(**otherTracker**, **weight**)
 

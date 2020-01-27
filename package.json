@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iarna/are-we-there-yet.git"
+    "url": "https://github.com/npm/are-we-there-yet.git"
   },
   "author": "Rebecca Turner (http://re-becca.org)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iarna/are-we-there-yet/issues"
+    "url": "https://github.com/npm/are-we-there-yet/issues"
   },
-  "homepage": "https://github.com/iarna/are-we-there-yet",
+  "homepage": "https://github.com/npm/are-we-there-yet",
   "devDependencies": {
     "standard": "^11.0.1",
     "tap": "^12.0.1"

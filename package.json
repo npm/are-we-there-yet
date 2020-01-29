@@ -4,8 +4,8 @@
   "description": "Keep track of the overall completion of many disparate processes",
   "main": "index.js",
   "scripts": {
-    "prepublish": "rm *~",
-    "test": "standard && tap test/*.js"
+    "lint": "standard",
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,13 +17,13 @@
     "url": "https://github.com/iarna/are-we-there-yet/issues"
   },
   "homepage": "https://github.com/iarna/are-we-there-yet",
-  "devDependencies": {
-    "standard": "^11.0.1",
-    "tap": "^12.0.1"
-  },
   "dependencies": {
     "delegates": "^1.0.0",
     "readable-stream": "^2.0.6"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "tap": "^14.10.6"
   },
   "files": [
     "index.js",

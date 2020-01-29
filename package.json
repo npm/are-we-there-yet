@@ -4,7 +4,6 @@
   "description": "Keep track of the overall completion of many disparate processes",
   "main": "index.js",
   "scripts": {
-    "prepublish": "rm *~",
     "test": "standard && tap test/*.js"
   },
   "repository": {

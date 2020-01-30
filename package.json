@@ -31,5 +31,8 @@
     "tracker-stream.js",
     "tracker.js",
     "CHANGES.md"
-  ]
+  ],
+  "engines": {
+    "node": ">=10"
+  }
 }

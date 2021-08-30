@@ -15,18 +15,18 @@ Usage
 =====
 
 ```javascript
-var TrackerGroup = require("are-we-there-yet").TrackerGroup
+const TrackerGroup = require("are-we-there-yet").TrackerGroup
 
-var top = new TrackerGroup("program")
+const top = new TrackerGroup("program")
 
-var single = top.newItem("one thing", 100)
+const single = top.newItem("one thing", 100)
 single.completeWork(20)
 
 console.log(top.completed()) // 0.2
 
 fs.stat("file", function(er, stat) {
-  if (er) throw er  
-  var stream = top.newStream("file", stat.size)
+  if (er) throw er
+  const stream = top.newStream("file", stat.size)
   console.log(top.completed()) // now 0.1 as single is 50% of the job and is 20% complete
                               // and 50% * 20% == 10%
   fs.createReadStream("file").pipe(stream).on("data", function (chunk) {
@@ -79,7 +79,7 @@ or if it didn't have one, the first containing tracker group that had one.
 TrackerGroup
 ============
 
-* var tracker = new TrackerGroup(**name**)
+* const tracker = new TrackerGroup(**name**)
 
   * **name** *(optional)* - The name of this tracker group, used in change
     notifications if the component updating didn't have a name. Defaults to undefined.
@@ -101,12 +101,12 @@ completion of this tracker and the second will account for the other 67%.
 
 Returns **otherTracker**.
 
-* var subGroup = tracker.newGroup(**name**, **weight**)
+* const subGroup = tracker.newGroup(**name**, **weight**)
 
 The above is exactly equivalent to:
 
 ```javascript
-  var subGroup = tracker.addUnit(new TrackerGroup(name), weight)
+const subGroup = tracker.addUnit(new TrackerGroup(name), weight)
 ```
 
 * var subItem = tracker.newItem(**name**, **todo**, **weight**)
@@ -114,7 +114,7 @@ The above is exactly equivalent to:
 The above is exactly equivalent to:
 
 ```javascript
-  var subItem = tracker.addUnit(new Tracker(name, todo), weight)
+const subItem = tracker.addUnit(new Tracker(name, todo), weight)
 ```
 
 * var subStream = tracker.newStream(**name**, **todo**, **weight**)
@@ -122,7 +122,7 @@ The above is exactly equivalent to:
 The above is exactly equivalent to:
 
 ```javascript
-  var subStream = tracker.addUnit(new TrackerStream(name, todo), weight)
+const subStream = tracker.addUnit(new TrackerStream(name, todo), weight)
 ```
 
 * console.log( tracker.debug() )

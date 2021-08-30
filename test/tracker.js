@@ -1,20 +1,20 @@
 'use strict'
-var test = require('tap').test
-var Tracker = require('../index.js').Tracker
+const test = require('tap').test
+const Tracker = require('../index.js').Tracker
 
-var testEvent = require('./lib/test-event.js')
+const testEvent = require('./lib/test-event.js')
 
-var name = 'test'
+const name = 'test'
 
 test('initialization', function (t) {
-  var simple = new Tracker(name)
+  const simple = new Tracker(name)
 
   t.is(simple.completed(), 0, 'Nothing todo is 0 completion')
   t.done()
 })
 
-var track
-var todo = 100
+let track
+const todo = 100
 test('completion', function (t) {
   track = new Tracker(name, todo)
   t.is(track.completed(), 0, 'Nothing done is 0 completion')
@@ -49,7 +49,7 @@ test('complete more work', function (t) {
 })
 
 test('finish is always 100%', function (t) {
-  var finishtest = new Tracker(name, todo)
+  const finishtest = new Tracker(name, todo)
   finishtest.completeWork(50)
   finishtest.finish()
   t.is(finishtest.completed(), 1, 'finish: Explicitly finishing moves to 100%')

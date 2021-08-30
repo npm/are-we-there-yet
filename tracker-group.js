@@ -1,10 +1,10 @@
 'use strict'
-var util = require('util')
-var TrackerBase = require('./tracker-base.js')
-var Tracker = require('./tracker.js')
-var TrackerStream = require('./tracker-stream.js')
+const util = require('util')
+const TrackerBase = require('./tracker-base.js')
+const Tracker = require('./tracker.js')
+const TrackerStream = require('./tracker-stream.js')
 
-var TrackerGroup = module.exports = function (name) {
+const TrackerGroup = module.exports = function (name) {
   TrackerBase.call(this, name)
   this.parentGroup = null
   this.trackers = []
@@ -25,8 +25,8 @@ function bubbleChange (trackerGroup) {
 }
 
 TrackerGroup.prototype.nameInTree = function () {
-  var names = []
-  var from = this
+  const names = []
+  let from = this
   while (from) {
     names.unshift(from.name)
     from = from.parentGroup
@@ -36,7 +36,7 @@ TrackerGroup.prototype.nameInTree = function () {
 
 TrackerGroup.prototype.addUnit = function (unit, weight) {
   if (unit.addUnit) {
-    var toTest = this
+    let toTest = this
     while (toTest) {
       if (unit === toTest) {
         throw new Error(
@@ -59,10 +59,10 @@ TrackerGroup.prototype.addUnit = function (unit, weight) {
 
 TrackerGroup.prototype.completed = function () {
   if (this.trackers.length === 0) return 0
-  var valPerWeight = 1 / this.totalWeight
-  var completed = 0
-  for (var ii = 0; ii < this.trackers.length; ii++) {
-    var trackerId = this.trackers[ii].id
+  const valPerWeight = 1 / this.totalWeight
+  let completed = 0
+  for (let ii = 0; ii < this.trackers.length; ii++) {
+    const trackerId = this.trackers[ii].id
     completed += valPerWeight * this.weight[trackerId] * this.completion[trackerId]
   }
   return completed
@@ -83,19 +83,19 @@ TrackerGroup.prototype.newStream = function (name, todo, weight) {
 TrackerGroup.prototype.finish = function () {
   this.finished = true
   if (!this.trackers.length) this.addUnit(new Tracker(), 1, true)
-  for (var ii = 0; ii < this.trackers.length; ii++) {
-    var tracker = this.trackers[ii]
+  for (let ii = 0; ii < this.trackers.length; ii++) {
+    const tracker = this.trackers[ii]
     tracker.finish()
     tracker.removeListener('change', this.bubbleChange)
   }
   this.emit('change', this.name, 1, this)
 }
 
-var buffer = '                                  '
+const buffer = '                                  '
 TrackerGroup.prototype.debug = function (depth) {
   depth = depth || 0
-  var indent = depth ? buffer.substr(0, depth) : ''
-  var output = indent + (this.name || 'top') + ': ' + this.completed() + '\n'
+  const indent = depth ? buffer.substr(0, depth) : ''
+  let output = indent + (this.name || 'top') + ': ' + this.completed() + '\n'
   this.trackers.forEach(function (tracker) {
     if (tracker instanceof TrackerGroup) {
       output += tracker.debug(depth + 1)

@@ -1,8 +1,8 @@
 'use strict'
-var util = require('util')
-var TrackerBase = require('./tracker-base.js')
+const util = require('util')
+const TrackerBase = require('./tracker-base.js')
 
-var Tracker = module.exports = function (name, todo) {
+const Tracker = module.exports = function (name, todo) {
   TrackerBase.call(this, name)
   this.workDone = 0
   this.workTodo = todo || 0

@@ -1,9 +1,9 @@
 'use strict'
-var EventEmitter = require('events').EventEmitter
-var util = require('util')
+const EventEmitter = require('events').EventEmitter
+const util = require('util')
 
-var trackerId = 0
-var TrackerBase = module.exports = function (name) {
+let trackerId = 0
+const TrackerBase = module.exports = function (name) {
   EventEmitter.call(this)
   this.id = ++trackerId
   this.name = name

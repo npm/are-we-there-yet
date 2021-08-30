@@ -1,16 +1,16 @@
 'use strict'
-var test = require('tap').test
-var TrackerGroup = require('../index.js').TrackerGroup
-var testEvent = require('./lib/test-event.js')
+const test = require('tap').test
+const TrackerGroup = require('../index.js').TrackerGroup
+const testEvent = require('./lib/test-event.js')
 
 test('TrackerGroup', function (t) {
-  var name = 'test'
+  const name = 'test'
 
-  var track = new TrackerGroup(name)
+  let track = new TrackerGroup(name)
   t.is(track.completed(), 0, 'Nothing todo is 0 completion')
   testEvent(track, 'change', afterFinishEmpty)
   track.finish()
-  var a, b
+  let a, b
   function afterFinishEmpty (er, onChangeName, completion) {
     t.is(er, null, 'finishEmpty: on change event fired')
     t.is(onChangeName, name, 'finishEmpty: on change emits the correct name')
@@ -62,7 +62,7 @@ test('TrackerGroup', function (t) {
     track = new TrackerGroup(name)
     a = track.newGroup('a', 10)
     b = track.newGroup('b', 10)
-    var a1 = a.newItem('a.1', 10)
+    const a1 = a.newItem('a.1', 10)
     a1.completeWork(5)
     t.is(track.completed(), 0.25, 'nested: Initially quarter done')
     testEvent(track, 'change', afterNestedComplete)
@@ -78,16 +78,15 @@ test('TrackerGroup', function (t) {
 })
 
 test('cycles', function (t) {
-  var track = new TrackerGroup('top')
+  const track = new TrackerGroup('top')
   testCycle(track, track)
-  var layer1 = track.newGroup('layer1')
+  const layer1 = track.newGroup('layer1')
   testCycle(layer1, track)
   t.end()
 
   function testCycle (addTo, toAdd) {
     try {
       addTo.addUnit(toAdd)
-      t.fail(toAdd.name)
     } catch (ex) {
       console.log(ex)
       t.pass(toAdd.name)
@@ -96,7 +95,7 @@ test('cycles', function (t) {
 })
 
 test('should properly handle finish calls when the group contains a stream', function (t) {
-  var track = new TrackerGroup('test')
+  const track = new TrackerGroup('test')
   track.newStream('test-stream', 100)
   try {
     track.finish()

@@ -32,7 +32,7 @@
     "@npmcli/template-oss": "^2.7.1",
     "eslint": "^8.8.0",
     "eslint-plugin-node": "^11.1.0",
-    "tap": "^15.0.9"
+    "tap": "^15.1.6"
   },
   "dependencies": {
     "delegates": "^1.0.0",

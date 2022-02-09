@@ -24,6 +24,10 @@ module.exports = function (obj, event, next) {
   function gotTooManyResults () {
     var secondResult = Array.prototype.slice.call(arguments)
     clearTimeout(timeout)
-    next(new Error('Got too many results, first ' + util.inspect(result) + ' and then ' + util.inspect(secondResult)))
+    next(new Error(
+      'Got too many results, first ' +
+      util.inspect(result) + ' and then ' +
+      util.inspect(secondResult))
+    )
   }
 }

@@ -1,4 +1,4 @@
-Hi, figured we could actually use a changelog now:
+# Changelog
 
 ## 1.1.5 2018-05-24
 

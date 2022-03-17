@@ -29,7 +29,7 @@
   "homepage": "https://github.com/npm/are-we-there-yet",
   "devDependencies": {
     "@npmcli/eslint-config": "^2.0.0",
-    "@npmcli/template-oss": "^2.9.2",
+    "@npmcli/template-oss": "^3.0.0",
     "eslint": "^8.11.0",
     "eslint-plugin-node": "^11.1.0",
     "tap": "^15.1.6"

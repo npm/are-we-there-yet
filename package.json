@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tap",
     "npmclilint": "npmcli-lint",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint \"**/*.js\"",
     "lintfix": "npm run lint -- --fix",
     "posttest": "npm run lint",
     "postsnap": "npm run lintfix --",
@@ -14,8 +14,8 @@
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
     "snap": "tap",
-    "postlint": "npm-template-check",
-    "template-copy": "npm-template-copy --force"
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force"
   },
   "repository": {
     "type": "git",
@@ -29,9 +29,7 @@
   "homepage": "https://github.com/npm/are-we-there-yet",
   "devDependencies": {
     "@npmcli/eslint-config": "^2.0.0",
-    "@npmcli/template-oss": "^3.2.0",
-    "eslint": "^8.11.0",
-    "eslint-plugin-node": "^11.1.0",
+    "@npmcli/template-oss": "3.2.0",
     "tap": "^15.1.6"
   },
   "dependencies": {
@@ -39,11 +37,11 @@
     "readable-stream": "^3.6.0"
   },
   "files": [
-    "bin",
-    "lib"
+    "bin/",
+    "lib/"
   ],
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16"
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
   },
   "tap": {
     "branches": 68,
@@ -52,6 +50,7 @@
     "lines": 92
   },
   "templateOSS": {
-    "version": "2.9.2"
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "3.2.0"
   }
 }

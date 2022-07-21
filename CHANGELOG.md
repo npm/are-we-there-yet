@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/npm/are-we-there-yet/compare/v3.0.0...v3.0.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* replace deprecated String.prototype.substr() ([#140](https://github.com/npm/are-we-there-yet/issues/140)) ([6145a9e](https://github.com/npm/are-we-there-yet/commit/6145a9ef6908c0feb107ac41f704e0aabe2718d0))
+
 ## [3.0.0](https://www.github.com/npm/are-we-there-yet/compare/v2.0.0...v3.0.0) (2022-02-09)
 
 

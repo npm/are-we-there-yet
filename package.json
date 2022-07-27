@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "tap",
-    "npmclilint": "npmcli-lint",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "npm run lint -- --fix",
     "posttest": "npm run lint",

@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.0.0](https://github.com/npm/are-we-there-yet/compare/v3.0.1...v4.0.0) (2022-10-10)
+
+### ⚠️ BREAKING CHANGES
+
+* `are-we-there-yet` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+* [`529459c`](https://github.com/npm/are-we-there-yet/commit/529459c24875a8210c5fb472dcb6199cfea61acd) [#157](https://github.com/npm/are-we-there-yet/pull/157) postinstall for dependabot template-oss PR (@lukekarrys)
+
+### Dependencies
+
+* [`7af13fa`](https://github.com/npm/are-we-there-yet/commit/7af13fa1388e09abbbf4ce7e2ac6bb7a5fb81bc5) [#146](https://github.com/npm/are-we-there-yet/pull/146) bump readable-stream from 3.6.0 to 4.1.0
+
 ## [3.0.1](https://github.com/npm/are-we-there-yet/compare/v3.0.0...v3.0.1) (2022-07-21)
 
 

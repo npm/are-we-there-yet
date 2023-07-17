@@ -82,6 +82,7 @@ test('cycles', function (t) {
   testCycle(track, track)
   var layer1 = track.newGroup('layer1')
   testCycle(layer1, track)
+  t.equal(track.debug(), 'top: 0\n layer1: 0\n')
   t.end()
 
   function testCycle (addTo, toAdd) {

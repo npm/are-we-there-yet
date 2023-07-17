@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.1](https://github.com/npm/are-we-there-yet/compare/v4.0.0...v4.0.1) (2023-07-17)
+
+### Bug Fixes
+
+* [`aee9063`](https://github.com/npm/are-we-there-yet/commit/aee90632efbeb9d2d0efc98e4a8346906bc0fe3f) [#178](https://github.com/npm/are-we-there-yet/pull/178) modernize class inheritance (#178) (@jimmywarting)
+
 ## [4.0.0](https://github.com/npm/are-we-there-yet/compare/v3.0.1...v4.0.0) (2022-10-10)
 
 ### ⚠️ BREAKING CHANGES

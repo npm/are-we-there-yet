@@ -1,7 +1,7 @@
 'use strict'
 var test = require('tap').test
 var util = require('util')
-var stream = require('readable-stream')
+var stream = require('stream')
 var TrackerStream = require('../..').TrackerStream
 var testEvent = require('./test-event.js')
 

@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.0.2](https://github.com/npm/are-we-there-yet/compare/v4.0.1...v4.0.2) (2024-01-05)
+
+### Dependencies
+
+* [`09d821a`](https://github.com/npm/are-we-there-yet/commit/09d821a57c52a658a8105825ffeff92ef55f51cc) [#207](https://github.com/npm/are-we-there-yet/pull/207) remove delegates (#207)
+* [`fef6c21`](https://github.com/npm/are-we-there-yet/commit/fef6c2146e5c09ff512ac4c4d459093a9ac7487f) [#206](https://github.com/npm/are-we-there-yet/pull/206) remove readable-stream (#206)
+
+### Chores
+
+* [`6c3cebf`](https://github.com/npm/are-we-there-yet/commit/6c3cebfc65c5e9041ffd83a1615639ff47421958) [#205](https://github.com/npm/are-we-there-yet/pull/205) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`809215c`](https://github.com/npm/are-we-there-yet/commit/809215c7fff063d03550849b312b6de759c5e2db) [#205](https://github.com/npm/are-we-there-yet/pull/205) bump @npmcli/template-oss from 4.21.1 to 4.21.3 (@dependabot[bot])
+* [`8858a73`](https://github.com/npm/are-we-there-yet/commit/8858a73ca0ae1b2d669865da3f5d17db78184bc0) [#202](https://github.com/npm/are-we-there-yet/pull/202) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`b2134b9`](https://github.com/npm/are-we-there-yet/commit/b2134b9fa69ff7d69636c8d3a75f951f36645f1e) [#202](https://github.com/npm/are-we-there-yet/pull/202) bump @npmcli/template-oss from 4.19.0 to 4.21.1 (@dependabot[bot])
+* [`9acf64b`](https://github.com/npm/are-we-there-yet/commit/9acf64b5001329f36c0b49374de8dcd4be6ff102) [#184](https://github.com/npm/are-we-there-yet/pull/184) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`d8bacce`](https://github.com/npm/are-we-there-yet/commit/d8bacceae21b598de516c0553b7cc0efa7ed7dcc) [#184](https://github.com/npm/are-we-there-yet/pull/184) bump @npmcli/template-oss from 4.18.1 to 4.19.0 (@dependabot[bot])
+* [`9e4783f`](https://github.com/npm/are-we-there-yet/commit/9e4783f17c1b3eaec7d8a4292b99fd2ce7711205) [#182](https://github.com/npm/are-we-there-yet/pull/182) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`d55ffbf`](https://github.com/npm/are-we-there-yet/commit/d55ffbf7743276b2caa7a15ed466ff5bcc1652e7) [#182](https://github.com/npm/are-we-there-yet/pull/182) bump @npmcli/template-oss from 4.18.0 to 4.18.1 (@dependabot[bot])
+* [`08dc9f5`](https://github.com/npm/are-we-there-yet/commit/08dc9f551e5b6c88cf55c8b358597ec00ea14473) [#181](https://github.com/npm/are-we-there-yet/pull/181) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`8145faf`](https://github.com/npm/are-we-there-yet/commit/8145faf4d52aeb91d203c147fb94294a62298122) [#181](https://github.com/npm/are-we-there-yet/pull/181) bump @npmcli/template-oss from 4.17.0 to 4.18.0 (@dependabot[bot])
+
 ## [4.0.1](https://github.com/npm/are-we-there-yet/compare/v4.0.0...v4.0.1) (2023-07-17)
 
 ### Bug Fixes

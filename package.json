@@ -1,6 +1,6 @@
 {
   "name": "are-we-there-yet",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Keep track of the overall completion of many disparate processes",
   "main": "lib/index.js",
   "scripts": {

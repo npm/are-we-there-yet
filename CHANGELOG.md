@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.3](https://github.com/npm/are-we-there-yet/compare/v4.0.2...v4.0.3) (2024-04-21)
+
+### Chores
+
+* [`ac2acf6`](https://github.com/npm/are-we-there-yet/commit/ac2acf60cfac4938b91368b64364a3ed310806f7) [#211](https://github.com/npm/are-we-there-yet/pull/211) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`b5b6501`](https://github.com/npm/are-we-there-yet/commit/b5b6501d74b20e99ee85dad141eaa5ccf858eb34) [#211](https://github.com/npm/are-we-there-yet/pull/211) bump @npmcli/template-oss from 4.21.3 to 4.21.4 (@dependabot[bot])
+
 ## [4.0.2](https://github.com/npm/are-we-there-yet/compare/v4.0.1...v4.0.2) (2024-01-05)
 
 ### Dependencies

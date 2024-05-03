@@ -37,7 +37,7 @@ test('TrackerStream', function (t) {
     testEvent(track, 'change', afterAddWork)
     track.addWork(10)
   }
-  function afterAddWork (er, onChangeName) {
+  function afterAddWork (er) {
     t.equal(er, null, 'addWork: on change event fired')
     t.equal(track.completed(), 0.5, 'addWork: 50% completed')
 
